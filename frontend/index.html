@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<div class="report-card" id="reportCard">
+<div class="input-section">
+    <label for="studentNameInput">Enter Student Name:</label>
+    <input type="text" id="studentNameInput" placeholder="Enter student name">
+    <button onclick="generateReport()">Generate Report</button>
+</div>
+
+<div class="report-card" id="reportCard" style="display: none;">
     <div class="school-name">Arch School Name</div>
     <div class="header">
         <img src="url-for-school-badge" alt="School Badge">
@@ -21,24 +27,8 @@
         <div><strong>Term:</strong> <span id="term"></span></div>
     </div>
 
-    <table class="table">
-        <tr>
-            <th>Subject</th>
-            <th>Grade</th>
-            <th>Grade Descriptor</th>
-            <th>Teacher</th>
-        </tr>
-        <tbody id="subjectTable">
-            <tr><td>Agriculture</td><td id="agrGrade"></td><td id="agrDesc"></td><td id="agrTeacher"></td></tr>
-            <tr><td>Biology</td><td id="bioGrade"></td><td id="bioDesc"></td><td id="bioTeacher"></td></tr>
-            <tr><td>Chemistry</td><td id="chemGrade"></td><td id="chemDesc"></td><td id="chemTeacher"></td></tr>
-            <tr><td>CRE</td><td id="creGrade"></td><td id="creDesc"></td><td id="creTeacher"></td></tr>
-            <tr><td>English</td><td id="engGrade"></td><td id="engDesc"></td><td id="engTeacher"></td></tr>
-            <tr><td>Geography</td><td id="geoGrade"></td><td id="geoDesc"></td><td id="geoTeacher"></td></tr>
-            <tr><td>History</td><td id="histGrade"></td><td id="histDesc"></td><td id="histTeacher"></td></tr>
-            <tr><td>Mathematics</td><td id="mathGrade"></td><td id="mathDesc"></td><td id="mathTeacher"></td></tr>
-            <tr><td>Physics</td><td id="physGrade"></td><td id="physDesc"></td><td id="physTeacher"></td></tr>
-        </tbody>
+    <table class="table" id="subjectTable">
+        <!-- This will be populated dynamically based on student level (O Level or A Level) -->
     </table>
 
     <div><strong>Overall Achievement:</strong> <span id="achievement"></span></div>
@@ -53,9 +43,9 @@
         <div><strong>Class Teacher's Signature:</strong> ____________________</div>
         <div><strong>Head Teacher's Signature:</strong> ____________________</div>
     </div>
-</div>
 
-<button onclick="printReportCard()">Print Report Card</button>
+    <button onclick="printReportCard()">Print Report Card</button>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
