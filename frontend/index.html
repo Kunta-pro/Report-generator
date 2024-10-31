@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Card Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="report-card" id="reportCard">
+    <div class="school-name">Arch School Name</div>
+    <div class="header">
+        <img src="url-for-school-badge" alt="School Badge">
+        <img id="studentPhoto" src="url-for-student-photo" alt="Student Photo">
+    </div>
+    <div class="student-info">
+        <div><strong>Name:</strong> <span id="studentName"></span></div>
+        <div><strong>Student ID:</strong> <span id="studentID"></span></div>
+        <div><strong>Class:</strong> <span id="studentClass"></span></div>
+        <div><strong>Term:</strong> <span id="term"></span></div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th>Grade Descriptor</th>
+            <th>Teacher</th>
+        </tr>
+        <tbody id="subjectTable">
+            <tr><td>Agriculture</td><td id="agrGrade"></td><td id="agrDesc"></td><td id="agrTeacher"></td></tr>
+            <tr><td>Biology</td><td id="bioGrade"></td><td id="bioDesc"></td><td id="bioTeacher"></td></tr>
+            <tr><td>Chemistry</td><td id="chemGrade"></td><td id="chemDesc"></td><td id="chemTeacher"></td></tr>
+            <tr><td>CRE</td><td id="creGrade"></td><td id="creDesc"></td><td id="creTeacher"></td></tr>
+            <tr><td>English</td><td id="engGrade"></td><td id="engDesc"></td><td id="engTeacher"></td></tr>
+            <tr><td>Geography</td><td id="geoGrade"></td><td id="geoDesc"></td><td id="geoTeacher"></td></tr>
+            <tr><td>History</td><td id="histGrade"></td><td id="histDesc"></td><td id="histTeacher"></td></tr>
+            <tr><td>Mathematics</td><td id="mathGrade"></td><td id="mathDesc"></td><td id="mathTeacher"></td></tr>
+            <tr><td>Physics</td><td id="physGrade"></td><td id="physDesc"></td><td id="physTeacher"></td></tr>
+        </tbody>
+    </table>
+
+    <div><strong>Overall Achievement:</strong> <span id="achievement"></span></div>
+    <div class="remarks">
+        <strong>Class Teacher's Remarks:</strong> <span id="classTeacherRemarks"></span>
+    </div>
+    <div class="remarks">
+        <strong>Head Teacher's Remarks:</strong> <span id="headTeacherRemarks"></span>
+    </div>
+
+    <div class="footer">
+        <div><strong>Class Teacher's Signature:</strong> ____________________</div>
+        <div><strong>Head Teacher's Signature:</strong> ____________________</div>
+    </div>
+</div>
+
+<button onclick="printReportCard()">Print Report Card</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
